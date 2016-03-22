@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-  belongs_to :page_id
+  belongs_to :page
 end

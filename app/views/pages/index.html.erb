@@ -1,0 +1,13 @@
+
+
+<table class="table">
+<thead>
+ <td> name </td> <td> content </td> 
+</thead>
+<% @pages.each do |page| %>
+<tr>
+<td> <%= link_to page.name, page %> </td>
+<td> <%= page.content %> </td>
+</tr>
+<% end %>
+</table>
