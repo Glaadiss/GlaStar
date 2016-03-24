@@ -3,3 +3,5 @@ masrter edyt
 =======
 testy z brancha
 >>>>>>> testy
+
+hehe
