@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 masrter edyt
+=======
+testy z brancha
+>>>>>>> testy
