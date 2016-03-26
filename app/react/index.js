@@ -9,3 +9,6 @@ RWR.registerComponent('Pages', Pages);
 
 import Page from './components/page';
 RWR.registerComponent('Page', Page);
+
+import Welcome from './components/welcome';
+RWR.registerComponent('Welcome', Welcome);
