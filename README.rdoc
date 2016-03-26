@@ -2,4 +2,6 @@
 masrter edyt
 =======
 testy z brancha
+
+Dodane str witam.
 >>>>>>> testy
