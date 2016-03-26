@@ -12,3 +12,12 @@ RWR.registerComponent('Page', Page);
 
 import Welcome from './components/welcome';
 RWR.registerComponent('Welcome', Welcome);
+
+import Header from './components/headers/header';
+RWR.registerComponent('Header', Header);
+
+import HeaderZal from './components/headers/headerzal';
+RWR.registerComponent('HeaderZal', HeaderZal);
+
+import Footer from './components/headers/footer';
+RWR.registerComponent('Footer', Footer);
