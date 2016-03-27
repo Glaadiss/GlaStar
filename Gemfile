@@ -20,7 +20,7 @@ gem 'private_pub'     #for chat
 gem 'thin'            #for chat
 gem 'devise-bootstrap-views'
 gem 'aws-sdk'
-
+gem 'foreman'
 gem 'sdoc', '~> 0.4.0', group: :doc    
 group :development, :test do
   gem 'byebug'
