@@ -3,17 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
-  <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Indie+Flower' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <%= render 'layouts/react_hot_assets' %>
@@ -21,7 +16,7 @@
 
 	<header>
 		<% if user_signed_in? %>
-			<%= react_component('HeaderZal', { server_side: true }) %>
+      <%= react_component('HeaderZal', { server_side: true, userName: current_user.email }) %>
 		<% else %>
  			<%= react_component('Header', { server_side: true }) %>
 		<% end %>
@@ -30,8 +25,9 @@
 
   <div class="container">
     <%= yield %>
-  </div>
+    <%= react_component('Footer', { server_side: true }) %>
+ </div>
 
-  <%= react_component('Footer', { server_side: true }) %>
+
 </body>
 </html>
