@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root 'pages#index'
+    get "/users" =>  'users#index'
   end
 
   unauthenticated :user do
