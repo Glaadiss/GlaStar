@@ -52,3 +52,5 @@ gem "paperclip", "~> 4.3"
 gem 'will_paginate', '~> 3.0.6'
 gem 'devise'
 gem 'rails_12factor'
+gem 'private_pub'
+gem 'thin'

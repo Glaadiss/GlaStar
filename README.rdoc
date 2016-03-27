@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-masrter edyt
-=======
-testy z brancha
->>>>>>> testy
+use command "rackup private_pub.ru -s thin -E production" in separate terminal if u want conversation !!!!
