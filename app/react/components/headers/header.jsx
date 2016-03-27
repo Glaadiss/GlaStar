@@ -14,10 +14,10 @@ export default class Header extends React.Component {
 		                <ul className="nav navbar-nav">
 
 		                    <li>
-		                        <a href="users/sign_up">Sign up</a>
+		                        <a href="/users/sign_up">Sign up</a>
 		                    </li>
 		                    <li>
-		                        <a href="users/sign_in">Sign in</a>
+		                        <a href="/users/sign_in">Sign in</a>
 		                    </li>
 		                </ul>
 		            </div>

@@ -4,6 +4,7 @@ import React from 'react';
 export default class HeaderZal extends React.Component {
 	render () {
 		const userName = this.props.userName;
+		const avatar = this.props.avatar;
 		return (
 				<nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		        <div className="container">
@@ -14,6 +15,9 @@ export default class HeaderZal extends React.Component {
 		            </div>
 		            <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 		                <ul className="nav navbar-nav">
+		                		<li>
+		                				<img src={avatar} alt="image"/>
+		                		</li>
 		                		<li>
 		                				<a href="#"> Hejo {userName} </a>
 		                		</li>

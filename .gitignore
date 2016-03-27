@@ -12,5 +12,5 @@
 !/log/.keep
 /tmp
 /node_modules
-/app/assets/javascripts/react_bundle.js
-/app/assets/stylesheets/react_bundle.css
+/public/system
+/config/app_environment_variables.rb

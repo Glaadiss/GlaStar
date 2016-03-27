@@ -2,7 +2,14 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   def index
-    @pages = Page.all
+    if user_signed_in?
+      @pages = Page.others(current_user)
+      @yourPages = Page.your(current_user)
+    else
+      @pages = Page.all
+      @yourPages = ""
+    end
+    
   end
 
 

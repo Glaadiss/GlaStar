@@ -20,7 +20,7 @@ class Pages extends React.Component {
     const map = pages.map((object,i) => <Page key={i} obj={object} />);
     return(
       <div>
-      <h1> Blogs: </h1>
+      <h1> {this.props.title} </h1>
       <table className="table">
       <thead>
         <tr>
@@ -32,7 +32,6 @@ class Pages extends React.Component {
       {map}  
       </tbody>
       </table>
-      <a href="/pages/new"> Create new </a>
       </div>
     );
   }

@@ -16,7 +16,7 @@
 
 	<header>
 		<% if user_signed_in? %>
-      <%= react_component('HeaderZal', { server_side: true, userName: current_user.email }) %>
+      <%= react_component('HeaderZal', { server_side: true, userName: current_user.email, avatar: current_user.avatar.url(:face) }) %>
 		<% else %>
  			<%= react_component('Header', { server_side: true }) %>
 		<% end %>

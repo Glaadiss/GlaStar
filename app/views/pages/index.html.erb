@@ -1,3 +1,4 @@
 
-<%= react_component('Pages', { pages: @pages }) %>
-
+<%= react_component('Pages', { pages: @pages, title: "All Blogs: " }) %>
+<%= react_component('Pages', { pages: @yourPages, title: "Your Blogs: " }) %>
+<a href="/pages/new"> Create new </a>
