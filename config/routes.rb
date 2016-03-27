@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root 'users#index'
+    root 'pages#index'
   end
 
   unauthenticated :user do
     devise_scope :user do
-      get "/" => "devise/sessions#new"
+      get "/" => 'welcome#index'
     end
   end
 
@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :messages
   end
   
+
 
 end

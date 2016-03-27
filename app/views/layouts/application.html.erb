@@ -17,16 +17,21 @@
 </head>
 <body>
   <%= render 'layouts/react_hot_assets' %>
-  <%= render 'layouts/nav' %>
-  <div class="container">
-  <% if alert %>
-      <div class="alert alert-danger" role="alert"><%= alert %></div>
-  <% end %>
-  <% if notice %>
-      <div class="alert alert-success" role="alert"><%= notice %></div>
-  <% end %>
 
+
+	<header>
+		<% if user_signed_in? %>
+			<%= react_component('HeaderZal', { server_side: true }) %>
+		<% else %>
+ 			<%= react_component('Header', { server_side: true }) %>
+		<% end %>
+	</header>
+
+
+  <div class="container">
     <%= yield %>
   </div>
+
+  <%= react_component('Footer', { server_side: true }) %>
 </body>
 </html>
