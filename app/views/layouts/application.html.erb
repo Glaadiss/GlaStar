@@ -16,16 +16,16 @@
 
 	<header>
 		<% if user_signed_in? %>
-      <%= react_component('HeaderZal', { server_side: true, userName: current_user.email, avatar: current_user.avatar.url(:face) }) %>
+      <%= react_component('HeaderZal', { userName: current_user.email, avatar: current_user.avatar.url(:face) }) %>
 		<% else %>
- 			<%= react_component('Header', { server_side: true }) %>
+ 			<%= react_component('Header', { }) %>
 		<% end %>
 	</header>
 
 
   <div class="container">
     <%= yield %>
-    <%= react_component('Footer', { server_side: true }) %>
+    <%= react_component('Footer', { }) %>
  </div>
   
 
