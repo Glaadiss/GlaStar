@@ -1,0 +1,6 @@
+<%= simple_form_for ([@page, @article]) do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.input :name %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
