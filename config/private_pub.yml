@@ -5,6 +5,7 @@ test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "https://glastar.herokuapp.com/faye" 
-  secret_token: "3c2615b2af4ff43d24a8183bb693592555dbb490b6e8ee35e23bb57ca024e563"
+  server: "https://glastar-chat.herokuapp.com/faye" 
+  secret_token: "69555a04fc59024f9bcc89cc7a75b248fa62bf6306c36d637c56664411636295"
   signature_expiration: 3600 # one hour
+#"3c2615b2af4ff43d24a8183bb693592555dbb490b6e8ee35e23bb57ca024e563"
