@@ -3,7 +3,6 @@ import React from 'react';
 
 class Page extends React.Component {
   remove(row){
-    console.log(row.target.id);
     $(row.target).parent().parent().hide();
   }
   render() {

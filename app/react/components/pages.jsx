@@ -9,14 +9,12 @@ class Pages extends React.Component {
     };
     setTimeout(()=>{
       const pages = this.props.pages;
-      console.log(pages);
       this.setState({pages: pages});
     },100)
   }
 
   render() {
     const pages = this.state.pages;
-    console.log(pages);
     const map = pages.map((object,i) => <Page key={i} obj={object} />);
     return(
       <div>
