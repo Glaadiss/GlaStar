@@ -24,16 +24,18 @@
 
 <div class="container">
 <% if user_signed_in? %>
-    <%= subscribe_to "/chatroom"  %>
-    <script>
-      PrivatePub.subscribe("/chatroom", function(data, channel){
-        var current_user_id = '#{current_user.try(:id)}';
-        if (data.receiver_id == current_user_id){
-          chatBox.chatWith(data.conversation_id);
-        }
-      });
-    </script>
     <div class="col-md-10">
+      <%= subscribe_to "/chatroom"  %>
+      <script>
+        PrivatePub.subscribe("/chatroom", function(data, channel){
+          console.log(data);
+          console.log('works');
+          var current_user_id = '#{current_user.try(:id)}';
+          if (data.receiver_id == current_user_id){
+            chatBox.chatWith(data.conversation_id);
+          }
+        });
+      </script>
     <%= yield %>
     </div>
     <div class="col-md-2">
