@@ -14,13 +14,19 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find(params[:id])
-    @reciever = interlocutor(@conversation)
-    @messages = @conversation.messages
-    @message = Message.new
+    conversationTry = Conversation.find(params[:id])
+
+    if conversationTry.sender_id = current_user.id || conversationTry.recipient_id = current_user.id 
+      @conversation = conversationTry
+      @reciever = interlocutor(@conversation)
+      @messages = @conversation.messages
+      @message = Message.new
+    end
+
   end
 
   private
+
   def conversation_params
     params.permit(:sender_id, :recipient_id)
   end
@@ -28,4 +34,5 @@ class ConversationsController < ApplicationController
   def interlocutor(conversation)
     current_user == conversation.recipient ? conversation.sender : conversation.recipient
   end
+
 end
