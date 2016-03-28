@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
     def set_conversations 
       if user_signed_in?
         @conversations = Conversation.involving(current_user).order("created_at DESC")
+        @users = User.where.not("id = ?",current_user.id).order("created_at DESC")
       end
     end
-    
+
     def configure_permitted_parameters
       ## You can add add other custom fields that you have added to User Model in place of attr1, attr2
       devise_parameter_sanitizer.for(:sign_up) << :avatar  << :attr1 << :attr2  ## To permit parameters while User creation

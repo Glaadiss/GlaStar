@@ -1,0 +1,51 @@
+<div class="row">
+
+    <h3 style="text-align: center;"> Chat </h3>
+    <div style="height: 300px; ">
+      
+  
+
+          <% @users.each do |user| %>
+
+            <div class="col-md-4"> 
+              <%= image_tag user.avatar.url(:face), class: "media-object pull-left"  %>
+            </div>
+            <div class="col-md-8">  
+              <p> <%= user.email %> <p>
+              <p> <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation","data-sid" => current_user.id, "data-rip" => user.id %>
+              </p>                    
+            </div>
+          <% end %>
+
+      
+
+    </div>
+    <hr>
+    <h3 style="text-align: center;">Last</h3>
+
+    <div>
+      <% if @conversations.any? %>
+          <ul class="media-list">
+            <% @conversations.each do |conversation| %>
+                <li class="media">
+                  <div class="col-md-4">
+                      <%= image_tag conversation_interlocutor(conversation).avatar.url(:thumb),
+                       class: "media-object pull-left" %> 
+                  </div>
+                  <div class="col-md-8">
+                    <div class="media-body">
+                          <h5><%= link_to conversation_interlocutor(conversation).email, conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %> </h5>
+                          <p><%= conversation.messages.last.nil? ? "No messages" : truncate(conversation.messages.last.body, length: 45) %></p>
+                    </div>
+                  </div>
+                </li>
+
+            <% end %>
+          </ul>
+      <% else %>
+          <p>You have no conversations. Click send message with any user to create one.</p>
+      <% end %>
+    </div>
+
+
+</div>

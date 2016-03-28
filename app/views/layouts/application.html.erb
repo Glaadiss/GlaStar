@@ -22,9 +22,22 @@
 		<% end %>
 	</header>
 
+<div class="container">
+<% if user_signed_in? %>
 
-  <div class="container">
+    <div class="col-md-10">
     <%= yield %>
+    </div>
+    <div class="col-md-2">
+    <%= render 'layouts/chat' %>
+    </div> 
+<% else %>
+
+    <%= yield %>
+
+<% end %>
+
+
     <%= react_component('Footer', { }) %>
  </div>
   
