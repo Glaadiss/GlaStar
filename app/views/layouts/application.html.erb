@@ -29,6 +29,7 @@
       <script>
         PrivatePub.subscribe("/chatroom", function(data, channel){
           var current_user_id = <%= current_user.id %>;
+          console.log( data.receiver_id + ' ' + current_user_id + '' + data.conversation_id);
           if (data.receiver_id == current_user_id){
             chatBox.chatWith(data.conversation_id);
           }
