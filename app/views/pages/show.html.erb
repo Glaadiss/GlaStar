@@ -1,4 +1,26 @@
 <div>
+		<h1> Yours articles <h1>
+			<div class="row well">
+				<div class="col-md-8">Name</div>
+				<div class="col-md-4">Date</div>
+			</div>
+
+			<% @articles.each do |e| %>
+				<div class="row">
+					<div class="col-md-5"><%= e.name %></div>
+					<div class="col-md-4"><%= e.created_at %></div>
+					<div class="col-md-3">
+						<%= link_to "Show", page_article_path(@page, e), class: "btn btn-primary" %>
+						<%= link_to "Edit", edit_page_article_path(@page, e), class: "btn btn-info" %>
+					</div>
+				</div>
+			<% end %>
+
+</div>
+
+
+
+<div>
 <h1> <%= @page.name  %></h1>
 <p> <%= @page.content %></p>
 <br/>
