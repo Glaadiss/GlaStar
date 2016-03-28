@@ -24,7 +24,15 @@
 
 <div class="container">
 <% if user_signed_in? %>
-
+    <%= subscribe_to "/chatroom"  %>
+    <script>
+      PrivatePub.subscribe("/chatroom", function(data, channel){
+        var current_user_id = '#{current_user.try(:id)}';
+        if (data.receiver_id == current_user_id){
+          chatBox.chatWith(data.conversation_id);
+        }
+      });
+    </script>
     <div class="col-md-10">
     <%= yield %>
     </div>
@@ -32,13 +40,7 @@
     <%= render 'layouts/chat' %>
     </div> 
 <% else %>
-    <%= subscribe_to "/chatroom"  %>
-    <script>
-      PrivatePub.subscribe("/chatroom", function(data, channel){
-        var current_user_id = '#{current_user.try(:id)}';
-        chatBox.chatWith(data.conversation_id);
-      });
-    </script>
+
     <%= yield %>
 
 <% end %>
